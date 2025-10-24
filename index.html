@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revanche | Tributo Fresno + Emo Songs Anos 2000</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/Logo-Revanche-PNG.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/Logo-Revanche-PNG.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // CONFIGURAÇÃO TAILWIND
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Cores Padrão da Banda
+                        'rev-primary': '#AB2217', // Vermelho
+                        'rev-secondary': '#D9CDB5', // Off-White/Vintage (Substitui o branco)
+                        'rev-black': '#000000', // Preto
+                        'rev-white-puro': '#FFFFFF', // Branco (pra coisas com mais contraste ou texto puro)
+                    },
+                    fontFamily: {
+                        // Fonte Oficial da Banda
+                        'sans': ['Montserrat', 'sans-serif'],
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Estilos customizados para o Efeito Glitch/Distortion (Opcional) */
+        /* Ajustando as cores do efeitinho de glitch */
+        .glitch-text {
+            text-shadow: 2px 2px #AB2217, -2px -2px #D9CDB5; /* Vermelho e Off-White */
+            animation: glitch 1s infinite;
+        }
+        @keyframes glitch {
+            /* Mantém a animação, mas as cores já tão definidas ali no text-shadow */
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+        /* Estilo pra imagem/foto de background (SE for usar! tô pensando ainda) */
+        #home {
+             background-image: url('assets/bg.jpg'); /* Imagem do background */
+             background-size: cover;
+             background-position: center;
+        }
+        /* Estilo pra manter o texto padrão na cor Off-White da logo (rev-secondary) */
+        body {
+            color: #D9CDB5; 
+        }
+    </style>
+</head>
+
+<body class="bg-rev-black text-rev-secondary antialiased">
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-colors duration-300 shadow-xl">
+        <nav class="container mx-auto flex justify-between items-center py-4 px-6 lg:px-8">
+            <h1 class="text-3xl font-bold tracking-widest text-rev-primary">REVANCHE - TRIBUTO FRESNO + EMO SONGS</h1>
+            <ul class="flex space-x-8 text-lg font-bold">
+                <li><a href="#home" class="text-rev-secondary hover:text-rev-primary transition-colors duration-200">Início</a></li>
+                <li><a href="#musica" class="text-rev-secondary hover:text-rev-primary transition-colors duration-200">Música</a></li>
+                <li><a href="#agenda" class="text-rev-secondary hover:text-rev-primary transition-colors duration-200">Agenda</a></li>
+                <li><a href="#contato" class="text-rev-secondary hover:text-rev-primary transition-colors duration-200">Contato</a></li>
+                <li><a href="./loja.html" target="_blank" class="text-rev-secondary hover:text-rev-primary transition-colors duration-200">Loja</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SEÇÃO PRINCIPAL - o que fica na cara do usuário -->
+        <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+            <div class="container mx-auto text-center p-8 bg-rev-black/80 border-4 border-rev-primary animate-fade-in-up">
+                <img src="assets/Logo-Revanche-PNG.png" alt="Logo Revanche" class="max-w-xs mx-auto mb-6 glitch-text" style="filter: drop-shadow(0 0 5px var(--rev-primary));">
+                <p class="text-2xl lg:text-3xl font-bold mb-8 text-rev-secondary">O Emo Vive. A Revanche Chegou.</p>
+                <a href="#" class="bg-rev-primary hover:bg-rev-primary/80 text-rev-secondary font-extrabold py-4 px-8 uppercase tracking-wider transition-colors duration-300 border-2 border-rev-secondary inline-block">
+                    <!-- PRÓXIMO SHOW: GARANTA SEU INGRESSO! (ou algo do tipo)-->
+                    FIQUE LIGADO QUE LOGO ANUNCIAREMOS MAIS DATAS!
+                </a>
+                <div class="flex justify-center space-x-8 mt-8">
+                    <a href="https://www.instagram.com/banda.revanche" target="_blank" class="text-3xl text-rev-secondary hover:text-rev-primary transition-colors duration-200"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@bandarevanche" target="_blank" class="text-3xl text-rev-secondary hover:text-rev-primary transition-colors duration-200"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://open.spotify.com/playlist/3uoiG5vPNcJg1i81Dlv5Ae?si=e4ea4917f46c40c7" target="_blank" class="text-3xl text-rev-secondary hover:text-rev-primary transition-colors duration-200"><i class="fab fa-spotify"></i></a>
+                    <!-- <a href="[LINK YOUTUBE]" target="_blank" class="text-3xl text-rev-secondary hover:text-rev-primary transition-colors duration-200"><i class="fab fa-youtube"></i></a> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIA -->
+        <section id="musica" class="py-20 section" data-animation="fade-in">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-4xl font-extrabold border-b-4 border-rev-primary pb-4 mb-12 text-rev-primary">MÚSICA & VÍDEO</h2>
+                <div class="grid lg:grid-cols-2 gap-10">
+                    <div class="video-player aspect-w-16 aspect-h-9 w-full rounded overflow-hidden shadow-2xl border-2 border-rev-secondary">
+                        <iframe width="100%" height="100%" src="[botar link tipo EMBED VÍDEO do yt aqui]" frameborder="0" allowfullscreen class="w-full h-full"></iframe>
+                    </div>
+                    <div class="audio-player min-h-[380px] rounded shadow-2xl border-2 border-rev-secondary">
+                        <iframe src="https://open.spotify.com/embed/playlist/3uoiG5vPNcJg1i81Dlv5Ae?utm_source=generator" width="100%" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+                <!-- <div class="text-center mt-10">
+                    <a href="[LINK PRO YOUTUBE (planos futuros)]" target="_blank" class="text-rev-primary font-bold hover:text-rev-secondary transition-colors duration-200 underline">VER TODOS OS VÍDEOS NO YOUTUBE</a>
+                </div> -->
+            </div>
+        </section>
+
+        <!-- AGENDA DE SHOWS -->
+        <section id="agenda" class="py-20 bg-rev-black section" data-animation="fade-in">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-4xl font-extrabold border-b-4 border-rev-primary pb-4 mb-12 text-rev-primary">AGENDA DE SHOWS</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-rev-primary shadow-2xl">
+                        <thead class="bg-rev-primary text-rev-black">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">DATA</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">LOCAL/EVENTO</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">CIDADE</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">INGRESSOS</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-rev-black bg-rev-black">
+                            <!-- MODELO CONFIRMADO -->
+                            <!-- <tr class="hover:bg-rev-black/50 transition-colors duration-200 border-l-4 border-rev-primary">
+                                <td class="px-6 py-4 whitespace-nowrap font-bold text-rev-primary">30 AGO</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-rev-secondary">EMO RIOT FEST</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-rev-secondary">Ribeirão Preto/SP</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <a href="[LINK SYMPLA]" class="bg-rev-primary hover:bg-rev-primary/80 text-rev-secondary font-bold py-1 px-3 rounded text-sm transition-colors">INGRESSOS!</a>
+                                </td>
+                            </tr> -->
+
+                            <!-- MODELO A CONFIRMAR -->
+                            <!-- <tr>
+                                <td class="px-6 py-4 whitespace-nowrap font-bold text-rev-secondary">15 SET</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-rev-secondary">[Outro Local]</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-rev-secondary">[Outra Cidade/Estado]</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-rev-primary/50">INFO EM BREVE</td>
+                            </tr> -->
+
+                            <!-- MODELO SEM DATAS ATIVAS: -->
+                            <tr>
+                                <td colspan="4" class="py-4 text-center whitespace-nowrap font-bold text-rev-secondary">EM BREVE</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO SOBRE A BANDA -->
+        <section id="banda" class="py-20 section" data-animation="fade-in">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-4xl font-extrabold border-b-4 border-rev-primary pb-4 mb-12 text-rev-primary">QUEM SOMOS</h2>
+                <p class="bio-text text-center mb-10 max-w-4xl mx-auto">A Revanche nasceu do desejo de reviver a energia caótica e emocional do emo dos anos 2000, com um tributo visceral ao Fresno e aos hinos da época. O retorno marca uma nova era de rock autêntico e cheio de atitude!</p>
+                
+                <div class="flex justify-center gap-10 flex-wrap">
+                    <div class="text-center max-w-[200px]">
+                        <img src="assets/foto-seu-nome.jpg" alt="Foto do Vocalista" class="w-full border-4 border-rev-secondary hover:border-rev-primary transition-colors duration-300">
+                        <h3 class="text-xl mt-3 mb-0 text-rev-secondary font-bold">Felipe Gardenghi</h3>
+                        <p class="text-rev-primary font-semibold">Vocal / Guitarra</p>
+                    </div>
+                    <div class="text-center max-w-[200px]">
+                        <img src="assets/foto-edu.jpg" alt="Foto do Edu" class="w-full border-4 border-rev-secondary hover:border-rev-primary transition-colors duration-300">
+                        <h3 class="text-xl mt-3 mb-0 text-rev-secondary font-bold">Eduardo Opaleiro</h3>
+                        <p class="text-rev-primary font-semibold">Guitarra / Voz de Apoio</p>
+                    </div>
+                    <div class="text-center max-w-[200px]">
+                        <img src="assets/foto-edu.jpg" alt="Foto do Edu" class="w-full border-4 border-rev-secondary hover:border-rev-primary transition-colors duration-300">
+                        <h3 class="text-xl mt-3 mb-0 text-rev-secondary font-bold">Yago Borges</h3>
+                        <p class="text-rev-primary font-semibold">Baixo / Voz de Apoio</p>
+                    </div>
+                    <div class="text-center max-w-[200px]">
+                        <img src="assets/foto-edu.jpg" alt="Foto do Edu" class="w-full border-4 border-rev-secondary hover:border-rev-primary transition-colors duration-300">
+                        <h3 class="text-xl mt-3 mb-0 text-rev-secondary font-bold">Leonan Artal</h3>
+                        <p class="text-rev-primary font-semibold">Bateria</p>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="contato" class="py-20 bg-rev-black section" data-animation="fade-in">
+            <div class="container mx-auto text-center px-6">
+                <h2 class="text-4xl font-extrabold border-b-4 border-rev-primary pb-4 mb-12 text-rev-primary">AGENDAMENTO E IMPRENSA</h2>
+                <p class="text-lg mb-8 text-rev-secondary">Para propostas de shows, parcerias e imprensa, entre em contato:</p>
+                <div class="flex justify-center space-x-10 text-xl font-bold mb-12">
+                    <p class="text-rev-secondary">📧 <a href="mailto:contato@bandarevanche.com" target="_blank" class="hover:text-rev-primary">contato@bandarevanche.com</a></p>
+                    <p class="text-rev-secondary">📱 <a href="" target="_blank" class="hover:text-rev-primary">WhatsApp: (16) 99373-3667</a></p>
+                </div>
+                
+                <a href="[LINK EPK GOOGLE DRIVE AQUI]" target="_blank" class="bg-rev-primary hover:bg-rev-primary/80 text-rev-secondary font-extrabold py-4 px-8 uppercase tracking-wider transition-colors duration-300 border-2 border-rev-secondary inline-block">
+                    BAIXAR PRESS KIT (EPK)
+                </a>
+                <p class="text-sm mt-4 text-rev-secondary/70">Material de qualidade para promotores e mídia.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-rev-black py-6 border-t border-rev-primary text-center">
+        <div class="container mx-auto text-sm text-gray-500">
+            Desenvolvido por Felipe Gardenghi &copy; 2025 Revanche. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        // Função para Adicionar Efeito de Sticky Header
+        const header = document.getElementById('header');
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-rev-black', 'bg-opacity-95');
+            } else {
+                header.classList.remove('bg-opacity-95');
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+
+        // Função de Animação na Rolagem (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up'); 
+                    entry.target.style.opacity = '1';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.section').forEach(section => {
+            section.style.opacity = '0';
+            observer.observe(section);
+        });
+        
+        // Função para Smooth Scroll (Opcional)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                // O Tailwind 'scroll-smooth' na tag HTML já faz o trabalho na maioria dos navegadores
+                // Mas esta função garante o scroll to view se necessário
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
