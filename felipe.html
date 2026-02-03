@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felipe Gardenghi | REVANCHE</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/Logo-Revanche-PNG.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/Logo-Revanche-PNG.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // CONFIGURAÇÃO TAILWIND
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'rev-primary': '#AB2217',
+                        'rev-secondary': '#D9CDB5',
+                        'rev-black': '#000000',
+                        'rev-white-puro': '#FFFFFF',
+                    },
+                    fontFamily: {
+                        'sans': ['Montserrat', 'sans-serif'],
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            color: #D9CDB5;
+        }
+    </style>
+</head>
+
+<body class="bg-rev-black text-rev-secondary antialiased">
+    <!-- HEADER -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-colors duration-300 shadow-xl bg-opacity-90 lg:bg-opacity-95">
+        <nav class="container mx-auto flex flex-col lg:flex-row justify-between items-center py-4 px-6 lg:px-8">
+            <div class="flex justify-between items-center w-full lg:w-auto">
+                <a href="./index.html" class="text-2xl lg:text-3xl font-bold tracking-widest text-rev-primary hover:text-rev-secondary transition-colors">REVANCHE</a>
+                <button id="menu-toggle" class="lg:hidden text-rev-secondary hover:text-rev-primary">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <ul id="mobile-menu" class="hidden lg:flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 text-lg font-bold w-full lg:w-auto text-right lg:text-left items-end lg:items-center mt-4 lg:mt-0 sm:justify-end lg:justify-start">
+                <li><a href="./index.html#banda" class="text-rev-secondary hover:text-rev-primary hover:bg-rev-primary/20 transition-all duration-200 px-3 py-2 rounded">Voltar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="pt-24 lg:pt-32">
+        <!-- BIO PRINCIPAL -->
+        <section id="bio" class="py-10 lg:py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <!-- FOTO -->
+                    <div class="flex justify-center md:justify-end">
+                        <img src="assets/foto-felipe.jpg" alt="Felipe Gardenghi" class="w-full max-w-sm md:max-w-md aspect-[140/210] object-contain border-4 border-rev-primary shadow-2xl">
+                    </div>
+
+                    <!-- INFORMAÇÕES -->
+                    <div class="flex flex-col justify-center">
+                        <h1 class="text-4xl lg:text-5xl font-extrabold text-rev-primary mb-4">Felipe Gardenghi</h1>
+                        <p class="text-2xl lg:text-3xl font-bold text-rev-secondary mb-8">Vocal / Guitarra</p>
+                        
+                        <div class="space-y-6 mb-8">
+                            <p class="text-lg lg:text-xl leading-relaxed">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                            </p>
+                            <p class="text-lg lg:text-xl leading-relaxed">
+                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+
+                        <!-- REDES SOCIAIS -->
+                        <div class="flex space-x-6">
+                            <a href="https://instagram.com/felipegardenghi" target="_blank" class="text-4xl text-rev-secondary hover:text-rev-primary transition-colors duration-200">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://twitter.com/felipegardenghi" target="_blank" class="text-4xl text-rev-secondary hover:text-rev-primary transition-colors duration-200">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="https://tiktok.com/@felipe.gardenghi" target="_blank" class="text-4xl text-rev-secondary hover:text-rev-primary transition-colors duration-200">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://twitch.tv/felipegardenghi" target="_blank" class="text-4xl text-rev-secondary hover:text-rev-primary transition-colors duration-200">
+                                <i class="fab fa-twitch"></i>
+                            </a>
+                            <!-- <a href="https://youtube.com" target="_blank" class="text-4xl text-rev-secondary hover:text-rev-primary transition-colors duration-200">
+                                <i class="fab fa-youtube"></i> -->
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO DE CURIOSIDADES/DESTAQUES -->
+        <section id="destaques" class="py-10 lg:py-20 bg-rev-black/50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-3xl lg:text-4xl font-extrabold text-rev-primary mb-12">DESTAQUES</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- DESTAQUE 1 -->
+                    <div class="bg-rev-black border-2 border-rev-primary p-6 rounded text-center">
+                        <i class="fas fa-guitar text-5xl text-rev-primary mb-4"></i>
+                        <h3 class="text-2xl font-bold text-rev-secondary mb-3">Influências Musicais</h3>
+                        <p class="text-rev-secondary">
+                            Green Day, Blink-182, Dashboard Confessional e muitas outras bandas clássicas do emo rock dos anos 2000.
+                        </p>
+                    </div>
+
+                    <!-- DESTAQUE 2 -->
+                    <div class="bg-rev-black border-2 border-rev-primary p-6 rounded text-center">
+                        <i class="fas fa-microphone text-5xl text-rev-primary mb-4"></i>
+                        <h3 class="text-2xl font-bold text-rev-secondary mb-3">Carreira</h3>
+                        <p class="text-rev-secondary">
+                            Mais de 10 anos tocando em diferentes palcos e participando de diversos projetos musicais.
+                        </p>
+                    </div>
+
+                    <!-- DESTAQUE 3 -->
+                    <div class="bg-rev-black border-2 border-rev-primary p-6 rounded text-center">
+                        <i class="fas fa-star text-5xl text-rev-primary mb-4"></i>
+                        <h3 class="text-2xl font-bold text-rev-secondary mb-3">Objetivo</h3>
+                        <p class="text-rev-secondary">
+                            Levar a música do emo para as próximas gerações e manter viva a essência do rock emocional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIA DE FOTOS -->
+        <section id="galeria" class="py-10 lg:py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-center text-3xl lg:text-4xl font-extrabold text-rev-primary mb-12">GALERIA</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
+                        <i class="fas fa-image text-4xl"></i>
+                    </div>
+                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
+                        <i class="fas fa-image text-4xl"></i>
+                    </div>
+                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
+                        <i class="fas fa-image text-4xl"></i>
+                    </div>
+                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
+                        <i class="fas fa-image text-4xl"></i>
+                    </div>
+                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
+                        <i class="fas fa-image text-4xl"></i>
+                    </div>
+                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
+                        <i class="fas fa-image text-4xl"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VOLTAR -->
+        <section id="voltar" class="py-10 lg:py-20 text-center">
+            <a href="./index.html#banda" class="bg-rev-primary hover:bg-rev-primary/80 text-rev-secondary font-extrabold py-4 px-8 uppercase tracking-wider transition-colors duration-300 border-2 border-rev-secondary inline-block rounded">
+                ← Voltar para a Banda
+            </a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-rev-black mx-6 py-6 border-t border-rev-primary">
+        <div class="container mx-auto text-center text-xs lg:text-sm text-gray-300">
+            Desenvolvido por Felipe Gardenghi &copy; 2026 REVANCHE. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <script>
+        // Função para Toggle do Menu Mobile
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu ao clicar em um link (mobile)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Adicionar Efeito de Sticky Header
+        const header = document.getElementById('header');
+        const handleScroll = () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-rev-black', 'bg-opacity-95');
+            } else {
+                header.classList.remove('bg-opacity-95');
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+    </script>
+</body>
+</html>

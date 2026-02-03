@@ -107,7 +107,7 @@
     <div id="confirmation-modal" class="fixed inset-0 hidden items-center justify-center z-[100] modal-bg">
         <div class="bg-rev-black border-4 border-rev-primary p-6 md:p-10 max-w-lg w-full text-center">
             <h2 class="text-4xl font-bold text-rev-primary mb-4">Pedido Enviado!</h2>
-            <p class="text-lg mb-6">Obrigado! Seu pedido foi enviado para a Revanche via WhatsApp. Agora, escolha sua forma de pagamento:</p>
+            <p class="text-lg mb-6">Obrigado! Seu pedido foi enviado para a REVANCHE via WhatsApp. Agora, escolha sua forma de pagamento:</p>
             
             <h3 class="text-2xl font-bold text-rev-secondary mt-6">Pagamento via PIX</h3>
             <p class="mb-2">A chave PIX da banda será: <strong class="text-rev-primary" id="pix-key-display">16993733667</strong></p>
@@ -125,19 +125,16 @@
         const productsData = [
             { id: 1, name: 'Camiseta "Revanche" Logo Clássica', price: 60.00, sizes: ['P', 'M', 'G', 'GG'], image: 'assets/merch/2.jpg', type: 'Camiseta' },
             { id: 2, name: 'Camiseta "Fantasma"', price: 70.00, sizes: ['P', 'M', 'G', 'GG'], image: 'assets/merch/Revanche-Fantasma.jpg', type: 'Camiseta' },
-            { id: 3, name: 'Caneca "blablabla"', price: 35.00, sizes: [], image: 'assets/merch/caneca-coracao.jpg', type: 'Caneca' },
-            { id: 4, name: 'Kit de Bottons (4 unidades)', price: 15.00, sizes: [], image: 'assets/merch/bottons.jpg', type: 'Acessório' },
-            { id: 5, name: 'Palhetas Revanche (Pack 5 unidades)', price: 10.00, sizes: [], image: 'assets/merch/palheta.jpg', type: 'Acessório' },
-            { id: 6, name: 'Copo Personalizado "Halloween"', price: 25.00, sizes: [], image: 'assets/merch/copo.jpg', type: 'Copo' },
+            // { id: 3, name: 'Caneca "blablabla"', price: 35.00, sizes: [], image: 'assets/merch/caneca-coracao.jpg', type: 'Caneca' },
+            // { id: 4, name: 'Kit de Bottons (4 unidades)', price: 15.00, sizes: [], image: 'assets/merch/bottons.jpg', type: 'Acessório' },
+            // { id: 5, name: 'Palhetas Revanche (Pack 5 unidades)', price: 10.00, sizes: [], image: 'assets/merch/palheta.jpg', type: 'Acessório' },
+            // { id: 6, name: 'Copo Personalizado "Halloween"', price: 25.00, sizes: [], image: 'assets/merch/copo.jpg', type: 'Copo' },
         ];
         
         // **!!! CONFIGURAÇÕES ESSENCIAIS DA LOJINHA !!!**
         const BAND_WHATSAPP = '5516993733667';
         const PIX_KEY = '16993733667';
         const PIX_QR_CODE_URL = 'assets/pix-qr-code.png'; // inserir qr code do pix!!
-    </script>
-    
-    <script>
         let cart = [];
 
         // ------------------ DOM ELEMENTS do JS ------------------
@@ -207,7 +204,7 @@
             const card = document.createElement('div');
             card.className = 'product-card bg-rev-black border-4 border-rev-secondary rounded-lg overflow-hidden flex flex-col items-center p-4';
             card.innerHTML = `
-                <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover border-b-2 border-rev-primary mb-4">
+                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover border-b-2 border-rev-primary mb-4">
                 <h3 class="text-xl font-bold text-rev-secondary mb-1 text-center">${product.name}</h3>
                 <p class="text-3xl font-extrabold text-rev-primary mb-3">${formatPrice(product.price)}</p>
                 
