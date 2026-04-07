@@ -40,8 +40,9 @@ Desenvolvido com tecnologias puramente front-end para funcionar perfeitamente no
 - 📱 **Totalmente responsivo** — menu hamburguer, grid adaptativo, carrossel mobile
 - 🔍 **SEO completo** — meta tags, Open Graph (WhatsApp/Facebook) e Twitter Card
 - ♿ **Acessível** — navegação por teclado, `aria-label`, `aria-expanded`, `focus-visible`
-- 🖼️ **Lightbox** nas galerias de fotos dos membros (mouse e teclado)
+- 🖼️ **Lightbox** nas galerias de fotos dos membros — navegação por setas, teclado (← →) e swipe mobile
 - 📅 **Agenda dinâmica** via GitHub Gist — sem precisar mexer no código para atualizar shows
+- 🎟️ **Botão destaque** dinâmico via GitHub Gist — exibe o próximo show com link de ingresso
 - 🎵 **Embed do Spotify** com a playlist oficial
 - 🤝 **Carrossel de parceiros** com suporte a drag/swipe no mobile
 - ⚡ **Lazy loading** em todas as imagens abaixo da dobra
@@ -89,8 +90,9 @@ A agenda é carregada dinamicamente a partir de um **GitHub Gist**, sem precisar
 ### Formato do JSON:
 
 ```json
-[
-  {
+{
+  "_instrucoes": "Adicione shows no array 'shows'. Array vazio [] exibe 'EM BREVE ANUNCIAREMOS MAIS DATAS!'.",
+  "_exemplo": {
     "data": "30 AGO 2026",
     "local": "Toca do Jack",
     "cidade": "Ribeirão Preto/SP",
@@ -98,23 +100,64 @@ A agenda é carregada dinamicamente a partir de um **GitHub Gist**, sem precisar
     "ingresso_url": "https://link-para-ingresso.com",
     "ingresso_texto": "COMPRAR INGRESSO"
   },
-  {
-    "data": "15 SET 2026",
-    "local": "Os Pirata",
-    "cidade": "São Carlos/SP",
-    "status": "em_breve",
-    "ingresso_url": "",
-    "ingresso_texto": ""
-  }
-]
+  "_status_opcoes": "confirmado = exibe link | em_breve = exibe 'INFO EM BREVE'",
+  "shows": [
+    {
+      "data": "30 AGO 2026",
+      "local": "Toca do Jack",
+      "cidade": "Ribeirão Preto/SP",
+      "status": "confirmado",
+      "ingresso_url": "https://link-para-ingresso.com",
+      "ingresso_texto": "COMPRAR INGRESSO"
+    }
+  ]
+}
 ```
 
 | Campo | Valores possíveis |
 |---|---|
 | `status` | `"confirmado"` — exibe link de ingresso \| `"em_breve"` — exibe "INFO EM BREVE" |
-| Array vazio `[]` | Exibe mensagem "Em breve mais datas!" |
+| `shows: []` | Exibe mensagem "Em breve mais datas!" |
 
 > ⚠️ **Atenção com o cache:** a URL do Gist utilizada é sempre a versão mais recente (`/raw/shows.json`), com `?nocache=Date.now()` para garantir que o navegador não use versão antiga.
+
+---
+
+## 🎟️ Como Atualizar o Botão Destaque
+
+O botão principal da home exibe o próximo show em destaque, carregado de um **GitHub Gist** separado (`show-destaque.json`).
+
+**Acesse:** [gist.github.com](https://gist.github.com) → busque pelo arquivo `show-destaque.json`
+
+### Formato do JSON:
+
+```json
+{
+  "_instrucoes": "Para exibir show: preencha o array 'destaque' com 1 objeto. Para ocultar: deixe o array vazio [].",
+  "_exemplo": {
+    "evento": "NOME DO EVENTO",
+    "cidade": "Cidade/UF",
+    "data": "DD/MM/AAAA",
+    "ingresso_url": "https://link-dos-ingressos",
+    "ingresso_texto": "INGRESSOS JÁ DISPONÍVEIS!"
+  },
+  "destaque": [
+    {
+      "evento": "RESSACA EMO",
+      "cidade": "Ribeirão Preto/SP",
+      "data": "28/02/2026",
+      "ingresso_url": "https://link-dos-ingressos",
+      "ingresso_texto": "INGRESSOS JÁ DISPONÍVEIS!"
+    }
+  ]
+}
+```
+
+| Estado | Comportamento |
+|---|---|
+| `destaque: []` | Exibe "FIQUE LIGADO QUE LOGO ANUNCIAREMOS MAIS DATAS!" |
+| Com objeto, sem `ingresso_url` | Exibe nome do show, sem link |
+| Com objeto e `ingresso_url` | Exibe nome do show com link abrindo em nova aba |
 
 ---
 

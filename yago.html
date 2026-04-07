@@ -61,7 +61,6 @@
             background-image: url('assets/img/banda/banda.jpg');
             background-size: cover;
             background-position: top center;
-            background-attachment: fixed;
             opacity: 0.04;
             z-index: 0;
             pointer-events: none;
@@ -250,18 +249,45 @@
     <!-- LIGHTBOX -->
     <div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4" onclick="closeLightbox()">
         <button class="absolute top-4 right-6 text-rev-secondary hover:text-rev-primary text-5xl font-bold leading-none" onclick="closeLightbox(event)" aria-label="Fechar galeria">&#x2715;</button>
-        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain border-4 border-rev-primary shadow-2xl" onclick="event.stopPropagation()">
+        <button class="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 text-rev-secondary hover:text-rev-primary text-4xl lg:text-5xl p-2" onclick="navigateLightbox(event, -1)" aria-label="Foto anterior"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+        <img id="lightbox-img" src="" alt="" class="max-w-[80vw] max-h-[90vh] object-contain border-4 border-rev-primary shadow-2xl" onclick="event.stopPropagation()">
+        <button class="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 text-rev-secondary hover:text-rev-primary text-4xl lg:text-5xl p-2" onclick="navigateLightbox(event, 1)" aria-label="Próxima foto"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
     </div>
     <script>
+        let galleryImages = [];
+        let currentLightboxIndex = 0;
+
+        function buildGallery() {
+            const items = document.querySelectorAll('#galeria [role="button"]');
+            galleryImages = Array.from(items).map(item => {
+                const img = item.querySelector('img');
+                return { src: img.getAttribute('src'), alt: img.getAttribute('alt') };
+            });
+        }
+
         function openLightbox(src, alt) {
+            if (galleryImages.length === 0) buildGallery();
+            currentLightboxIndex = galleryImages.findIndex(img => img.src === src);
+            if (currentLightboxIndex === -1) currentLightboxIndex = 0;
+            showLightboxImage(currentLightboxIndex);
             const lb = document.getElementById('lightbox');
-            const img = document.getElementById('lightbox-img');
-            img.src = src;
-            img.alt = alt || 'Foto ampliada';
             lb.classList.remove('hidden');
             lb.classList.add('flex');
             document.body.style.overflow = 'hidden';
         }
+
+        function showLightboxImage(index) {
+            const img = document.getElementById('lightbox-img');
+            img.src = galleryImages[index].src;
+            img.alt = galleryImages[index].alt || 'Foto ampliada';
+        }
+
+        function navigateLightbox(e, direction) {
+            e.stopPropagation();
+            currentLightboxIndex = (currentLightboxIndex + direction + galleryImages.length) % galleryImages.length;
+            showLightboxImage(currentLightboxIndex);
+        }
+
         function closeLightbox(e) {
             if (e) e.stopPropagation();
             const lb = document.getElementById('lightbox');
@@ -269,7 +295,24 @@
             lb.classList.remove('flex');
             document.body.style.overflow = '';
         }
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+        document.addEventListener('keydown', e => {
+            const lb = document.getElementById('lightbox');
+            if (lb.classList.contains('hidden')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(e, -1);
+            if (e.key === 'ArrowRight') navigateLightbox(e, 1);
+        });
+
+        // Swipe support for mobile
+        let lbTouchStartX = 0;
+        document.getElementById('lightbox').addEventListener('touchstart', e => {
+            lbTouchStartX = e.touches[0].clientX;
+        }, { passive: true });
+        document.getElementById('lightbox').addEventListener('touchend', e => {
+            const diff = lbTouchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 50) navigateLightbox(e, diff > 0 ? 1 : -1);
+        });
     </script>
 </body>
 </html>

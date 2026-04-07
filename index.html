@@ -2,17 +2,12 @@
 <html lang="pt-BR" class="scroll-smooth">
 <head>
 
-    <!-- -> deixar tabela de agenda de shows mais responsiva (pegar como base o iPhone 12 Pro no DevTools)
+    <!-- 
+    -> deixar tabela de agenda de shows mais responsiva (pegar como base o iPhone 12 Pro no DevTools)
     -> fazer alerta mais bonito na hora de adicionar o produto ao carrinho na loja.html
     -> revisar o fluxo e textos do checkout
-    -> deixar loja.html responsiva também
-    -> talvez adicionar alguma seção de "fotos de shows" futuramente
-    -> revisar textos e conteúdos para possíveis melhorias
-    -> revisar margins e paddings para melhor espaçamento visual principalmente em telas menores (talvez esteja muito grande!!)
-    -> testar em diferentes navegadores e dispositivos para garantir compatibilidade
-    -> adicionar analytics (Google Analytics ou similar) para monitorar tráfego do site
     -> considerar adicionar seção de blog ou notícias para atualizações da banda (feed rss)
-    -> revisar acessibilidade do site (contraste de cores, navegação por teclado, etc) -->
+    -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,7 +87,6 @@
             background-image: url('assets/img/banda/banda.jpg');
             background-size: cover;
             background-position: top center;
-            background-attachment: fixed;
             opacity: 0.04;
             z-index: 0;
             pointer-events: none;
@@ -152,10 +146,8 @@
             <div class="container mx-auto text-center p-4 md:p-8 bg-rev-black/45 border-4 border-rev-primary animate-fade-in-up sm:rounded-lg shadow-2xl">
                 <img src="assets/img/Logo-Revanche-PNG.png" alt="Logo Revanche" class="w-full max-w-[200px] md:max-w-xs mx-auto mb-6 glitch-text" style="filter: drop-shadow(0 0 5px var(--rev-primary));">
                 <p class="text-lg md:text-2xl lg:text-3xl font-bold mb-8 text-rev-secondary">O Emo Vive. A Revanche Chegou.</p>
-                <a href="#" target="" class="underline underline-offset-2 bg-rev-primary hover:bg-rev-primary/80 text-rev-secondary font-extrabold text-sm lg:text-base py-2 px-4 lg:py-4 lg:px-8 uppercase tracking-wider transition-colors duration-300 border-2 border-rev-secondary inline-block">
-                    <!-- PRÓXIMO SHOW: GARANTA SEU INGRESSO! (ou algo do tipo)-->
+                <a id="cta-show" href="#" class="underline underline-offset-2 bg-rev-primary hover:bg-rev-primary/80 text-rev-secondary font-extrabold text-sm lg:text-base py-2 px-4 lg:py-4 lg:px-8 uppercase tracking-wider transition-colors duration-300 border-2 border-rev-secondary inline-block">
                     FIQUE LIGADO QUE LOGO ANUNCIAREMOS MAIS DATAS!
-                    <!-- RESSACA EMO (Ribeirão Preto/SP) - 28/02/2026 - INGRESSOS JÁ DISPONÍVEIS! -->
                 </a>
                 <div class="flex justify-center space-x-6 lg:space-x-8 mt-6">
                     <a href="https://www.instagram.com/banda.revanche" target="_blank" aria-label="Instagram da Revanche" class="text-3xl text-rev-secondary hover:text-rev-primary transition-colors duration-200"><i class="fab fa-instagram" aria-hidden="true"></i></a>
@@ -282,9 +274,9 @@
                             <a href="https://instagram.com/toca_pub_underground" target="_blank" aria-label="Instagram da Toca do Jack" class="flex-shrink-0"><img src="assets/parceiros/toca-do-jack.jpg" loading="lazy" alt="Toca do Jack" class="carousel-item h-32 object-contain border-4 border-rev-secondary hover:border-rev-primary transition-colors"></a>
                             <a href="https://instagram.com/ospirata_sao_carlos" target="_blank" aria-label="Instagram de Os Pirata" class="flex-shrink-0"><img src="assets/parceiros/os-pirata.jpg" loading="lazy" alt="Os Pirata" class="carousel-item h-32 object-contain border-4 border-rev-secondary hover:border-rev-primary transition-colors"></a>
                             <!-- Duplicar items para efeito infinito -->
-                            <a href="https://instagram.com/caramujo_store" target="_blank" aria-label="Instagram da Caramujo Store" class="flex-shrink-0"><img src="assets/parceiros/caramujo-store.jpg" loading="lazy" alt="Caramujo Store" class="carousel-item h-32 object-contain border-4 border-rev-secondary hover:border-rev-primary transition-colors"></a>
-                            <a href="https://instagram.com/toca_pub_underground" target="_blank" aria-label="Instagram da Toca do Jack" class="flex-shrink-0"><img src="assets/parceiros/toca-do-jack.jpg" loading="lazy" alt="Toca do Jack" class="carousel-item h-32 object-contain border-4 border-rev-secondary hover:border-rev-primary transition-colors"></a>
-                            <a href="https://instagram.com/ospirata_sao_carlos" target="_blank" aria-label="Instagram de Os Pirata" class="flex-shrink-0"><img src="assets/parceiros/os-pirata.jpg" loading="lazy" alt="Os Pirata" class="carousel-item h-32 object-contain border-4 border-rev-secondary hover:border-rev-primary transition-colors"></a>
+                            <a href="https://instagram.com/caramujo_store" target="_blank" aria-hidden="true" tabindex="-1" class="flex-shrink-0"><img src="assets/parceiros/caramujo-store.jpg" loading="lazy" alt="" class="carousel-item h-32 object-contain border-4 border-rev-secondary hover:border-rev-primary transition-colors"></a>
+                            <a href="https://instagram.com/toca_pub_underground" target="_blank" aria-hidden="true" tabindex="-1" class="flex-shrink-0"><img src="assets/parceiros/toca-do-jack.jpg" loading="lazy" alt="" class="carousel-item h-32 object-contain border-4 border-rev-secondary hover:border-rev-primary transition-colors"></a>
+                            <a href="https://instagram.com/ospirata_sao_carlos" target="_blank" aria-hidden="true" tabindex="-1" class="flex-shrink-0"><img src="assets/parceiros/os-pirata.jpg" loading="lazy" alt="" class="carousel-item h-32 object-contain border-4 border-rev-secondary hover:border-rev-primary transition-colors"></a>
                         </div>
                     </div>
                     
@@ -361,6 +353,7 @@
             link.addEventListener('click', () => {
                 if (window.innerWidth < 1024) { // lg breakpoint
                     document.getElementById('mobile-menu').classList.add('hidden');
+                    document.getElementById('menu-toggle').setAttribute('aria-expanded', 'false');
                 }
             });
         });
@@ -412,7 +405,7 @@
 
             function moveDrag(e) {
                 if (!isDragging) return;
-                
+                if (e.cancelable) e.preventDefault();
                 const currentX = e.type.includes('mouse') ? e.clientX : e.touches[0].clientX;
                 const diff = currentX - startX;
                 currentTranslate = prevTranslate + diff;
@@ -460,13 +453,39 @@
             updateCarousel();
         }
 
+        // ─── BOTÃO DESTAQUE — carregado via GitHub Gist ──────────────────────────
+        // Para atualizar: edite show-destaque.json no Gist abaixo.
+        // [] → exibe texto padrão | [{ "evento": "...", "cidade": "...", "data": "...",
+        //   "ingresso_url": "https://...", "ingresso_texto": "INGRESSOS JÁ DISPONÍVEIS!" }]
+        const DESTAQUE_URL = 'https://gist.githubusercontent.com/FelipeGardenghiDev/96614c87cef583b468929165d58353c7/raw/show-destaque.json';
+        const CTA_DEFAULT = 'FIQUE LIGADO QUE LOGO ANUNCIAREMOS MAIS DATAS!';
+
+        (async function carregarDestaque() {
+            const btn = document.getElementById('cta-show');
+            try {
+                const res = await fetch(DESTAQUE_URL + '?nocache=' + Date.now());
+                if (!res.ok) throw new Error();
+                const d = await res.json();
+                if (!Array.isArray(d.destaque) || d.destaque.length === 0) return;
+                const show = d.destaque[0];
+                btn.textContent = `${show.evento} — ${show.cidade} — ${show.data} — ${show.ingresso_texto || 'MAIS INFOS'}`;
+                if (show.ingresso_url) {
+                    btn.href = show.ingresso_url;
+                    btn.target = '_blank';
+                    btn.rel = 'noopener noreferrer';
+                } else {
+                    btn.style.cursor = 'default';
+                    btn.removeAttribute('href');
+                }
+            } catch {
+                btn.textContent = CTA_DEFAULT;
+            }
+        })();
+
         // ─── AGENDA DE SHOWS — carregada via GitHub Gist ──────────────────────────
         // Para atualizar as datas: edite o arquivo shows.json no Gist abaixo.
-        // Formato de cada show:
-        // { "data": "30 AGO 2026", "local": "Toca do Jack", "cidade": "Ribeirão Preto/SP",
-        //   "status": "confirmado", "ingresso_url": "https://...", "ingresso_texto": "INGRESSOS!" }
-        // status: "confirmado" = com link | "em_breve" = sem link ainda
-        // Para "sem shows": deixe o array vazio []
+        // Formato: objeto com campo "shows" (array). [] = sem shows.
+        // status: "confirmado" = exibe link | "em_breve" = exibe "INFO EM BREVE"
         const GIST_URL = 'https://gist.githubusercontent.com/FelipeGardenghiDev/9fea95f74a0332c987f15696a9b90676/raw/shows.json';
 
         (async function carregarShows() {
@@ -560,8 +579,8 @@
             try {
                 const res = await fetch(GIST_URL + '?nocache=' + Date.now());
                 if (!res.ok) throw new Error();
-                const shows = await res.json();
-                renderShows(shows);
+                const d = await res.json();
+                renderShows(d.shows || []);
             } catch {
                 renderSemShows();
             }
