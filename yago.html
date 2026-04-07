@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Baixo e voz de apoio da Revanche. Conheça a história do alicerce da banda.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bandarevanche.com.br/yago.html">
+    <meta property="og:title" content="Yago Borges | REVANCHE">
+    <meta property="og:description" content="Baixo e voz de apoio da Revanche. Conheça a história do alicerce da banda.">
+    <meta property="og:image" content="https://bandarevanche.com.br/assets/img/Yago.jpg">
+    <meta property="og:locale" content="pt_BR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yago Borges | REVANCHE">
+    <meta name="twitter:description" content="Baixo e voz de apoio da Revanche. Conheça a história do alicerce da banda.">
+    <meta name="twitter:image" content="https://bandarevanche.com.br/assets/img/Yago.jpg">
     <title>Yago Borges | REVANCHE</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/Logo-Revanche-PNG.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/Logo-Revanche-PNG.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/Logo-Revanche-PNG.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/Logo-Revanche-PNG.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         // CONFIGURAÇÃO TAILWIND
@@ -37,11 +53,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
+        /* Parallax de fundo */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url('assets/img/banda/banda.jpg');
+            background-size: cover;
+            background-position: top center;
+            background-attachment: fixed;
+            opacity: 0.04;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Garante que o conteúdo fique sobre o fundo */
+        body > * {
+            position: relative;
+            z-index: 1;
+        }
         body {
             color: #D9CDB5;
         }
+        button:focus-visible,
+        a:focus-visible,
+        [role="button"]:focus-visible {
+            outline: 2px solid #AB2217;
+            outline-offset: 2px;
+        }
     </style>
-</head>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JV5TTWHF0W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JV5TTWHF0W');
+    </script></head>
 
 <body class="bg-rev-black text-rev-secondary antialiased">
     <!-- HEADER -->
@@ -49,8 +98,8 @@
         <nav class="container mx-auto flex flex-col lg:flex-row justify-between items-center py-4 px-6 lg:px-8">
             <div class="flex justify-between items-center w-full lg:w-auto">
                 <a href="./index.html" class="text-2xl lg:text-3xl font-bold tracking-widest text-rev-primary hover:text-rev-secondary transition-colors">REVANCHE</a>
-                <button id="menu-toggle" class="lg:hidden text-rev-secondary hover:text-rev-primary">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button id="menu-toggle" class="lg:hidden text-rev-secondary hover:text-rev-primary" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
                 </button>
             </div>
             <ul id="mobile-menu" class="hidden lg:flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-8 text-lg font-bold w-full lg:w-auto text-right lg:text-left items-end lg:items-center mt-4 lg:mt-0 sm:justify-end lg:justify-start">
@@ -66,28 +115,30 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
                     <!-- FOTO -->
                     <div class="flex justify-center md:justify-end">
-                        <img src="assets/foto-yago.jpg" alt="Yago Borges" class="w-full max-w-sm md:max-w-md aspect-[140/210] object-contain border-4 border-rev-primary shadow-2xl">
+                        <div class="w-full max-w-sm md:max-w-md aspect-[2/3] overflow-hidden border-4 border-rev-primary shadow-2xl mx-auto">
+                                <img src="assets/img/Yago.jpg" alt="Yago Borges" class="w-full h-full object-cover object-top">
+                            </div>
                     </div>
 
                     <!-- INFORMAÇÕES -->
                     <div class="flex flex-col justify-center">
-                        <h1 class="text-4xl lg:text-5xl font-extrabold text-rev-primary mb-4">Yago Borges</h1>
-                        <p class="text-2xl lg:text-3xl font-bold text-rev-secondary mb-8">Baixo / Voz de Apoio</p>
+                        <h1 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-rev-primary mb-4">Yago Borges</h1>
+                        <p class="text-xl md:text-2xl lg:text-3xl font-bold text-rev-secondary mb-8">Baixo / Voz de Apoio</p>
                         
                         <div class="space-y-6 mb-8">
-                            <p class="text-lg lg:text-xl leading-relaxed">
+                            <p class="text-base lg:text-xl leading-relaxed">
                                 Músico desde os 16 anos, tem uma trajetória marcada pela paixão pela música e pela integridade aos seus princípios. Já abriu shows de artistas relevantes da cena, como o Bruno Sutter em sua turnê de homenagem ao Iron Maiden.
                             </p>
-                            <p class="text-lg lg:text-xl leading-relaxed">Além da Revanche, também é baixista da Nevermind (Nirvana Cover) ganhando premiações importantes na cena rock do interior paulista.</p>
-                            <p class="text-lg lg:text-xl leading-relaxed">
-                                Fora da música, esbanja carisma e piadas <s>bem ruins</s> incríveis, além de amar qualquer bebida azul que encontrar.
+                            <p class="text-base lg:text-xl leading-relaxed">Além da Revanche, também é baixista da Nevermind (Nirvana Cover) ganhando premiações importantes na cena rock do interior paulista.</p>
+                            <p class="text-base lg:text-xl leading-relaxed">
+                                Fora da banda, esbanja carisma e piadas <s>bem ruins</s> incríveis, além de amar qualquer bebida azul que encontrar.
                             </p>
                         </div>
 
                         <!-- REDES SOCIAIS -->
                         <div class="flex space-x-6">
-                            <a href="https://instagram.com/kdodk138" target="_blank" class="text-4xl text-rev-secondary hover:text-rev-primary transition-colors duration-200">
-                                <i class="fab fa-instagram"></i>
+                            <a href="https://instagram.com/kdodk138" target="_blank" aria-label="Instagram do Yago Borges" class="text-4xl text-rev-secondary hover:text-rev-primary transition-colors duration-200">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
                             </a>
                         </div>
                     </div>
@@ -98,12 +149,12 @@
         <!-- SEÇÃO DE CURIOSIDADES/DESTAQUES -->
         <section id="destaques" class="py-10 lg:py-20 bg-rev-black/50">
             <div class="container mx-auto px-6">
-                <h2 class="text-center text-3xl lg:text-4xl font-extrabold text-rev-primary mb-12">DESTAQUES</h2>
+                <h2 class="text-center text-2xl lg:text-4xl font-extrabold text-rev-primary mb-8 lg:mb-12">DESTAQUES</h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
                     <!-- DESTAQUE 1 -->
                     <div class="bg-rev-black border-2 border-rev-primary p-6 rounded text-center">
-                        <i class="fas fa-compact-disc text-5xl text-rev-primary mb-4"></i>
+                        <i class="fas fa-compact-disc text-4xl md:text-5xl text-rev-primary mb-4" aria-hidden="true"></i>
                         <h3 class="text-2xl font-bold text-rev-secondary mb-3">Influências Musicais</h3>
                         <p class="text-rev-secondary">
                             Escape The Fate, Fresno, Misfits, Nirvana, Primus.
@@ -112,7 +163,7 @@
 
                     <!-- DESTAQUE 2 -->
                     <div class="bg-rev-black border-2 border-rev-primary p-6 rounded text-center">
-                        <i class="fas fa-heart text-5xl text-rev-primary mb-4"></i>
+                        <i class="fas fa-heart text-4xl md:text-5xl text-rev-primary mb-4" aria-hidden="true"></i>
                         <h3 class="text-2xl font-bold text-rev-secondary mb-3">Interesses</h3>
                         <p class="text-rev-secondary">
                            Música, Star Wars, obras de terror.
@@ -121,7 +172,7 @@
 
                     <!-- DESTAQUE 3 -->
                     <div class="bg-rev-black border-2 border-rev-primary p-6 rounded text-center">
-                        <i class="fas fa-star text-5xl text-rev-primary mb-4"></i>
+                        <i class="fas fa-star text-4xl md:text-5xl text-rev-primary mb-4" aria-hidden="true"></i>
                         <h3 class="text-2xl font-bold text-rev-secondary mb-3">Objetivo</h3>
                         <p class="text-rev-secondary">
                             Tocar nos maiores eventos de rock do mundo.
@@ -131,29 +182,28 @@
             </div>
         </section>
 
-        <!-- GALERIA DE FOTOS -->
+                <!-- GALERIA DE FOTOS -->
         <section id="galeria" class="py-10 lg:py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-center text-3xl lg:text-4xl font-extrabold text-rev-primary mb-12">GALERIA (EM BREVE!)</h2>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
-                        <i class="fas fa-image text-4xl"></i>
+                <h2 class="text-center text-2xl lg:text-4xl font-extrabold text-rev-primary mb-8 lg:mb-12">GALERIA</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                    <div role="button" tabindex="0" class="overflow-hidden border-2 border-rev-secondary hover:border-rev-primary transition-colors duration-300 cursor-pointer group" onclick="openLightbox('assets/img/yago/Ynhago (1).JPG', 'Yago Borges - Foto 1')" onkeypress="if(event.key==='Enter'||event.key===' ')openLightbox('assets/img/yago/Ynhago (1).JPG', 'Yago Borges - Foto 1')" aria-label="Abrir foto 1 de Yago Borges">
+                        <img src="assets/img/yago/Ynhago (1).JPG" alt="Yago Borges - Foto 1" loading="lazy" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
-                        <i class="fas fa-image text-4xl"></i>
+                    <div role="button" tabindex="0" class="overflow-hidden border-2 border-rev-secondary hover:border-rev-primary transition-colors duration-300 cursor-pointer group" onclick="openLightbox('assets/img/yago/Ynhago (2).JPG', 'Yago Borges - Foto 2')" onkeypress="if(event.key==='Enter'||event.key===' ')openLightbox('assets/img/yago/Ynhago (2).JPG', 'Yago Borges - Foto 2')" aria-label="Abrir foto 2 de Yago Borges">
+                        <img src="assets/img/yago/Ynhago (2).JPG" alt="Yago Borges - Foto 2" loading="lazy" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
-                        <i class="fas fa-image text-4xl"></i>
+                    <div role="button" tabindex="0" class="overflow-hidden border-2 border-rev-secondary hover:border-rev-primary transition-colors duration-300 cursor-pointer group" onclick="openLightbox('assets/img/yago/Ynhago (3).JPG', 'Yago Borges - Foto 3')" onkeypress="if(event.key==='Enter'||event.key===' ')openLightbox('assets/img/yago/Ynhago (3).JPG', 'Yago Borges - Foto 3')" aria-label="Abrir foto 3 de Yago Borges">
+                        <img src="assets/img/yago/Ynhago (3).JPG" alt="Yago Borges - Foto 3" loading="lazy" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110">
                     </div>
-                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
-                        <i class="fas fa-image text-4xl"></i>
+                    <div role="button" tabindex="0" class="overflow-hidden border-2 border-rev-secondary hover:border-rev-primary transition-colors duration-300 cursor-pointer group" onclick="openLightbox('assets/img/yago/Ynhago (4).JPG', 'Yago Borges - Foto 4')" onkeypress="if(event.key==='Enter'||event.key===' ')openLightbox('assets/img/yago/Ynhago (4).JPG', 'Yago Borges - Foto 4')" aria-label="Abrir foto 4 de Yago Borges">
+                        <img src="assets/img/yago/Ynhago (4).JPG" alt="Yago Borges - Foto 4" loading="lazy" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" style="object-position: center 25%;">
                     </div>
-                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
-                        <i class="fas fa-image text-4xl"></i>
+                    <div role="button" tabindex="0" class="overflow-hidden border-2 border-rev-secondary hover:border-rev-primary transition-colors duration-300 cursor-pointer group" onclick="openLightbox('assets/img/yago/Ynhago (5).JPG', 'Yago Borges - Foto 5')" onkeypress="if(event.key==='Enter'||event.key===' ')openLightbox('assets/img/yago/Ynhago (5).JPG', 'Yago Borges - Foto 5')" aria-label="Abrir foto 5 de Yago Borges">
+                        <img src="assets/img/yago/Ynhago (5).JPG" alt="Yago Borges - Foto 5" loading="lazy" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" style="object-position: center bottom;">
                     </div>
-                    <div class="aspect-square bg-rev-black/50 border-2 border-rev-secondary rounded flex items-center justify-center text-rev-secondary text-xl">
-                        <i class="fas fa-image text-4xl"></i>
+                    <div role="button" tabindex="0" class="overflow-hidden border-2 border-rev-secondary hover:border-rev-primary transition-colors duration-300 cursor-pointer group" onclick="openLightbox('assets/img/yago/Ynhago (6).JPG', 'Yago Borges - Foto 6')" onkeypress="if(event.key==='Enter'||event.key===' ')openLightbox('assets/img/yago/Ynhago (6).JPG', 'Yago Borges - Foto 6')" aria-label="Abrir foto 6 de Yago Borges">
+                        <img src="assets/img/yago/Ynhago (6).JPG" alt="Yago Borges - Foto 6" loading="lazy" class="w-full aspect-square object-cover transition-transform duration-500 group-hover:scale-110" style="object-position: center 25%;">
                     </div>
                 </div>
             </div>
@@ -170,7 +220,7 @@
     <!-- FOOTER -->
     <footer class="bg-rev-black mx-6 py-6 border-t border-rev-primary">
         <div class="container mx-auto text-center text-xs lg:text-sm text-gray-300">
-            Desenvolvido por FG SOFTWARE &copy; 2026 REVANCHE. Todos os direitos reservados.
+            Desenvolvido por FG SOFTWARE &copy; 2026 REVANCHE. Conteúdo protegido. Código sob licença MIT.
         </div>
     </footer>
 
@@ -179,13 +229,8 @@
         document.getElementById('menu-toggle').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenu.classList.toggle('hidden');
+            this.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
         });
-
-        // Fechar menu ao clicar em um link (mobile)
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 1024) {
-                    document.getElementById('mobile-menu').classList.add('hidden');
                 }
             });
         });
@@ -201,5 +246,37 @@
         };
         window.addEventListener('scroll', handleScroll);
     </script>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden items-center justify-center p-4" onclick="closeLightbox()">
+        <button class="absolute top-4 right-6 text-rev-secondary hover:text-rev-primary text-5xl font-bold leading-none" onclick="closeLightbox(event)" aria-label="Fechar galeria">&#x2715;</button>
+        <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] object-contain border-4 border-rev-primary shadow-2xl" onclick="event.stopPropagation()">
+    </div>
+    <script>
+        function openLightbox(src, alt) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            img.alt = alt || 'Foto ampliada';
+            lb.classList.remove('hidden');
+            lb.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox(e) {
+            if (e) e.stopPropagation();
+            const lb = document.getElementById('lightbox');
+            lb.classList.add('hidden');
+            lb.classList.remove('flex');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
