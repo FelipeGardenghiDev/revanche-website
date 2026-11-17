@@ -62,8 +62,14 @@ export default function BandaPage() {
               </p>
             </div>
 
-            <div className="pt-2">
-              <Button href={siteConfig.contact.whatsappUrl} variant="primary" size="sm" isExternal>
+            <div className="pt-2 flex justify-center sm:justify-start">
+              <Button
+                href={siteConfig.contact.whatsappUrl}
+                variant="primary"
+                size="md"
+                isExternal
+                className="w-full sm:w-auto font-black tracking-wider text-center"
+              >
                 Contratar Show da Banda
               </Button>
             </div>

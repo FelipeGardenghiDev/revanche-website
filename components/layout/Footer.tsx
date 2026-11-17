@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Mail, Phone, ExternalLink } from 'lucide-react';
+import { Mail, Phone, ExternalLink, Instagram } from 'lucide-react';
 import { siteConfig, mainNavItems } from '@/data/site-config';
 import { Container } from '@/components/layout/Container';
+import { TikTokIcon, SpotifyIcon } from '@/components/ui/Icons';
 
 export const Footer: React.FC = () => {
   return (
@@ -37,7 +38,7 @@ export const Footer: React.FC = () => {
                 aria-label="Instagram Oficial da Banda Revanche"
                 className="w-10 h-10 rounded-full border border-[#D9CDB5]/30 flex items-center justify-center text-[#D9CDB5] hover:text-[#AB2217] hover:border-[#AB2217] transition-colors"
               >
-                <span className="text-sm font-bold">IG</span>
+                <Instagram className="w-5 h-5" />
               </a>
               <a
                 href={siteConfig.socials.tiktok}
@@ -46,7 +47,7 @@ export const Footer: React.FC = () => {
                 aria-label="TikTok Oficial da Banda Revanche"
                 className="w-10 h-10 rounded-full border border-[#D9CDB5]/30 flex items-center justify-center text-[#D9CDB5] hover:text-[#AB2217] hover:border-[#AB2217] transition-colors"
               >
-                <span className="text-sm font-bold">TT</span>
+                <TikTokIcon className="w-4 h-4" />
               </a>
               <a
                 href={siteConfig.socials.spotifyPlaylist}
@@ -55,7 +56,7 @@ export const Footer: React.FC = () => {
                 aria-label="Playlist no Spotify da Banda Revanche"
                 className="w-10 h-10 rounded-full border border-[#D9CDB5]/30 flex items-center justify-center text-[#D9CDB5] hover:text-[#AB2217] hover:border-[#AB2217] transition-colors"
               >
-                <span className="text-sm font-bold">SP</span>
+                <SpotifyIcon className="w-5 h-5" />
               </a>
             </div>
           </div>
